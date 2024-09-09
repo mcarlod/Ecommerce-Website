@@ -1,0 +1,89 @@
+
+/* colour pallete 1 */
+:root {
+  --primary-color: rgb(255, 255, 255);
+  --secondary-color: rgb(255, 255, 255);
+  --bg-color: rgb(255, 255, 255);
+  --font-color: rgb(0, 0, 0);
+  --heading-color: rgb(255, 255, 255);
+}
+
+/* colour pallete 2 */
+[dark-theme='dark'] {
+  --primary-color: rgb(0, 0, 0);
+  --secondary-color: rgb(0, 0, 0);
+  --bg-color: rgb(0, 0, 0);
+  --font-color: rgb(255, 255, 255);
+  --heading-color: rgb(0, 0, 0);
+}
+
+/* modifies background color and color correspoding to colour pallete */
+html, body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+/* modifies the header */
+header {
+  background-color: var(--primary-color);
+  color: var(--font-color);
+}
+
+/* modifies h1 and h2 so that they are in the center and not change color */
+h1,h2 {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background-color:rgb(220, 220, 220);
+  color: black;
+}
+
+/* modifies h3 so that they are in the left and not change color */
+h3 {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  background-color:rgb(220, 220, 220);
+  color: black;
+  margin: 1em 0 0 0;
+}
+
+/* image and text container for the tree buttons adjusted to margin*/
+#imageContainer {
+  margin-top: 20px;
+}
+#textContainer {
+  margin-top: 20px;
+}
+
+/* modifies p so that they have space above */
+p {
+  margin: 0.9em 0 0 0;
+}
+
+/* modifies lists so that it is in one row and has a background color */
+.control {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding:0;
+  background-color:rgb(220, 220, 220);
+}
+.control li {
+  margin-right: 10px;
+}
+.control li:last-child {
+  margin-right: 0px;
+}
+
+/* ensures that the tree image is in the center */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.image-container img {
+  display: block;
+  margin: 0 auto;
+}

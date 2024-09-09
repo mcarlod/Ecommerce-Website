@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Electronic Commerce</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body onload="document.getElementById('button0').click()">
+   <header>
+      <h1>Electronic Commerce</h1>
+      <nav>
+         <!-- the class control enables all the data in list to be in one row -->      
+         <ul class="control">        
+            <li><a href="#">HOME</a></li>        
+            <li><a href="#">AUTHOR</a></li>        
+            <li><a href="#">PROJECTS</a></li>        
+            <li><a href="#">CONTACT</a></li>      
+         </ul>       
+      </nav> 
+
+      <!-- this code allows the switch theme button to have the properties of themeButton which changes the theme from light to dark and vice versa -->
+      <button id="themeButton">Switch Theme</button> 
+
+      <!-- this code allows the Hello header to have the properties of headerText which allows the user to input a name and have it displayed as a header -->
+      <h2 id="headerText">Hello</h2>  
+      <form id="nameForm">         
+         <input type="text" name="user_name" placeholder="Enter your name!">         
+         <button type="submit">Enter</button>       
+      </form>
+   </header>
+   <!-- this code showcases the current date and time the webpage is being accessed -->
+   <p>Current Date and Time: <div id="datetime"></div></p>   
+   <main>   
+      <!-- this code is the main content of the webpage -->   
+      <article>        
+         <h2>What is electronic commerce?</h2>        
+         <p>The process of electronic commerce grew in popularity and was used by most businesses in the USA due to the outbreak of the COVID-19 virus. The majority of the population had to adapt to a more digital lifestyle to prevent the outbreak from progressing, so they had to turn to digital or online channels instead. While it was convenient for businesses to go into a more digital lifestyle, many businesses that could only perform service through their physical stores had to shut down or could only offer limited products and services <a href="https://doi.org/10.1016/j.commtr.2023.100091">(Luo, et al., 2023)</a>.</p>        
+         <h3>Applications in the Real World</h3>        
+         <p>The adoption of electronic commerce is important in advancing entrepreneurship orientation and performance around the globe. Electronic commerce has changed the way we look at running a business and the more advanced our world is, the more competition there will be. It is an effective tool that helps the business become efficient while also increasing sales, enhancing inventory, and improving the customer’s experience with the business <a href="https://doi.org/10.1080/21665095.2021.1976657" >(Yacob et al., 2021)</a>.</p>        
+         <p>An example of electronic commerce that is popular among the public is the website domain ‘Amazon’. This is an online platform wherein customers can search for products they are interested in and add multiple products to their virtual carts. Once all products are in the virtual cart, the customer can check out and make an online transaction which then gets delivered to their address. </p>        
+         <h3>Recommendations</h3>        
+         <p>The advancement of electronic commerce has its advantages which benefit the community, but it also has its disadvantages such as controlling the pollution delivery carrier services which can be done better. A way to solve this problem is to turn petrol-powered delivery carrier vehicles into electrically powered ones. Through this, we can cut off global emissions. We have already made advancements such as solar-powered technology, so it is a good idea to incorporate that. Another idea would be to have multiple businesses make use of one carrier as it is better to have one carrier working for multiple businesses than multiple businesses using their own carriers. This would also solve the problem of having additional fees such as service and delivery fees because only a few carriers would be in use, which does not spike the prices.</p>        
+      </article>      
+      <aside>        
+         <!-- these text and lists contains hyperlinks related to the topic -->
+         <h2>Related Content</h2>        
+         <ul>          
+            <li><a href="https://ecommerceguide.com/guides/what-is-ecommerce/#:~:text=Ecommerce%2C%20or%20electronic%20commerce%2C%20refers%20to%20transactions%20conducted,auctions%2C%20internet%20banking%2C%20payment%20gateways%2C%20and%20online%20ticketing.">Guide to Electronic Commerce</a></li>          
+            <li><a href="https://simplicable.com/new/ecommerce-examples">Examples of Electronic Commerce</a></li>          
+            <li><a href="https://www.britannica.com/technology/e-commerce">History of Electronic Commerce</a></li>          
+            <li><a href="https://www.plytix.com/blog/evolution-of-ecommerce-timeline">Evolution of Electronic Commerce</a></li>          
+            <li><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/whats-next-in-ecommerce">Future of Electronic Commerce</a></li>       
+         </ul>      
+      </aside>
+
+      <!-- this unordered lists makes it so all the tree buttons are in one row neatly -->
+      <ul class="control">
+         <button onclick="showImage(0)">Japanese Garden Tree</button>
+         <button onclick="showImage(1)">Ceiba Tree</button>
+         <button onclick="showImage(2)">Ancient Olive Trees</button>
+         <button onclick="showImage(3)">Palm tree</button>
+         <button onclick="showImage(4)">Mangroves</button>
+      </ul>
+
+      <!-- this function will enable the changing of images and texts -->
+      <div id="imageContainer" class="image-container">
+         <img id="image" src="https://live.staticflickr.com/5505/10517564194_c98c355387_b.jpg" alt="Displayed Image" height="700" width="700">
+         <p id="imageText">"Famous Japanese Garden Tree in Portland by Michael Matti" by Michael Matti is licensed under CC BY-NC 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse</a>.
+	      </p>
+      </div>
+
+   </main>    
+   <footer>      
+      <p>© Copyright 2050 by nobody. All rights reversed.</p>    
+   </footer>  
+   <script>
+      const button = document.getElementById('button');
+      
+      // theme javascript
+      const themeButton = document.getElementById('themeButton');
+      const body = document.body;
+      
+      // function to update theme
+      function updateTheme() {
+         const currentTheme = body.getAttribute('dark-theme');
+         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+         body.setAttribute('dark-theme', newTheme);
+         localStorage.setItem('theme', newTheme);
+      }
+
+      // event listener to update theme through button
+      themeButton.addEventListener('click', function() {
+         updateTheme();
+      });
+
+      // function to apply theme based on data from local storage
+      function applyThemeFromStorage() {
+         const storedTheme = localStorage.getItem('theme');
+       
+         if (storedTheme) {
+           body.setAttribute('dark-theme', storedTheme);
+         }
+       }
+
+      // username javascript
+      const updateButton = document.getElementById('updateButton');
+      const headerText = document.getElementById('headerText');
+      const nameForm = document.getElementById('nameForm');
+      const userNameInput = document.querySelector('input[name="user_name"]');
+
+      // updates header to username alongside the hello text when button is clicked or read from local storage
+      function updateHeaderText() {
+         const storedUserName = localStorage.getItem('user_name');
+         if (storedUserName) {
+           headerText.textContent = `Hello, ${storedUserName}`;
+           userNameInput.value = storedUserName;
+         }
+      }
+
+      nameForm.addEventListener('submit', function(event) {
+         event.preventDefault();
+       
+         const userName = userNameInput.value;
+         if (userName) {
+           localStorage.setItem('user_name', userName);
+           headerText.textContent = `Hello, ${userName}`;
+           userNameInput.value = '';
+         }
+      });
+
+      // tree buttons and image javascript
+      const imageContainer = document.getElementById('imageContainer');
+      const imageElement = document.getElementById('image');
+      const imageTextElement = document.getElementById('imageText');
+
+      // function to show corresponding images and captions through index
+      function showImage(buttonIndex) {
+         const imageUrls = [
+         'https://live.staticflickr.com/5505/10517564194_c98c355387_b.jpg',
+         'https://live.staticflickr.com/1227/1155226271_39aa31cf4d_b.jpg',
+         'https://live.staticflickr.com/2426/3795866926_834c167b24_b.jpg',
+         'https://live.staticflickr.com/3118/2431912955_f1efb765aa_b.jpg',
+         'https://live.staticflickr.com/7099/6968551938_8960080fd9_b.jpg',
+         ];
+
+         const imageTexts = [
+         '"Famous Japanese Garden Tree in Portland by Michael Matti" by Michael Matti is licensed under CC BY-NC 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by-nc/2.0/?ref=openverse</a>.',
+         '"Ceiba Tree" by LollyKnit is licensed under CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by/2.0/?ref=openverse</a>.',
+         '"Corfu - Sept 2005 - Ancient Olive Trees" by Gareth1953 All Right Now is licensed under CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by/2.0/?ref=openverse</a>.',
+         '"Palm tree" by F H Mira is licensed under CC BY-SA 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by-sa/2.0/?ref=openverse</a>.',
+         '"Mangrove" by Brisbane City Council is licensed under CC BY 2.0. To view a copy of this license, visit <a href="https://creativecommons.org/licenses/by/2.0/?ref=openverse" target="_blank">https://creativecommons.org/licenses/by/2.0/?ref=openverse</a>.',
+         ];
+
+         const imageUrl = imageUrls[buttonIndex];
+         const imageText = imageTexts[buttonIndex];
+
+         imageElement.src = imageUrl;
+         imageTextElement.innerHTML = imageText;
+         imageContainer.style.display = 'block'
+      }
+
+
+      // date and time javascript
+      function displayDateTime() {
+         const datetimeElement = document.getElementById('datetime');
+         const currentDate = new Date();
+         const formattedDateTime = currentDate.toLocaleString();
+         datetimeElement.textContent = formattedDateTime;
+      }
+
+      // display date and time
+      displayDateTime();
+      setInterval(displayDateTime, 1000);
+
+      // displayed image url
+      window.open(imageUrls[index], '_blank');
+
+      // apply changes to header
+      window.onload = updateHeaderText;
+
+      // apply changes to theme
+      window.onload = function() {
+         applyThemeFromStorage();
+         updateHeaderText();
+       };
+   </script> 
+</body>
+</html>
